@@ -10,8 +10,5 @@
     "git-commit-plugin",
     "config"
   ],
-  "main": "index.js",
-  "dependencies": {
-    "@gitmoji/parser-opts": "^1.4.0"
-  }
+  "main": "index.js"
 }

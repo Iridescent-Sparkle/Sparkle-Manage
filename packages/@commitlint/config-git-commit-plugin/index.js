@@ -1,6 +1,9 @@
 module.exports = {
-  // FIXME：rewrite regular expression
-  parserPreset: '@gitmoji/parser-opts',
+  parserOpts: {
+    // FIXME：rewrite regular expression
+    headerPattern: /^(\w*)\((\w*)\)-(\w*)\s(.*)$/,
+    headerCorrespondence: ['type', 'scope', 'subject', 'body', 'footer'],
+  },
   rules: {
     'type-case': [2, 'always', 'lower-case'],
     'type-empty': [2, 'never'],
