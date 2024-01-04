@@ -1,4 +1,5 @@
 module.exports = {
+  // FIXME：rewrite regular expression
   parserPreset: '@gitmoji/parser-opts',
   rules: {
     'type-case': [2, 'always', 'lower-case'],

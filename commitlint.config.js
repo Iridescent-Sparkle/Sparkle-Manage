@@ -1,3 +1,3 @@
 export default {
-  extends: ['gitmoji', '@commitlint/config-git-commit-plugin'],
+  extends: ['@commitlint/config-git-commit-plugin'],
 }
