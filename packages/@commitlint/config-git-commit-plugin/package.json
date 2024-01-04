@@ -12,6 +12,6 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "conventional-changelog-conventionalcommits": "^7.0.2"
+    "@gitmoji/parser-opts": "^1.4.0"
   }
 }

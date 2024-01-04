@@ -72,6 +72,9 @@ importers:
       commitlint:
         specifier: ^18.4.3
         version: 18.4.3(typescript@5.3.3)
+      commitlint-config-gitmoji:
+        specifier: ^2.3.1
+        version: 2.3.1
       eslint:
         specifier: npm:eslint-ts-patch@8.56.0-0
         version: /eslint-ts-patch@8.56.0-0
@@ -117,9 +120,9 @@ importers:
 
   packages/@commitlint/config-git-commit-plugin:
     dependencies:
-      conventional-changelog-conventionalcommits:
-        specifier: ^7.0.2
-        version: 7.0.2
+      '@gitmoji/parser-opts':
+        specifier: ^1.4.0
+        version: 1.4.0
 
 packages:
 
@@ -724,6 +727,13 @@ packages:
       find-up: 5.0.0
     dev: true
 
+  /@commitlint/types@17.8.1:
+    resolution: {integrity: sha512-PXDQXkAmiMEG162Bqdh9ChML/GJZo6vU+7F03ALKDK8zYc6SuAr47LjG7hGYRqUOz+WK0dU7bQ0xzuqFMdxzeQ==}
+    engines: {node: '>=v14'}
+    dependencies:
+      chalk: 4.1.2
+    dev: true
+
   /@commitlint/types@18.4.3:
     resolution: {integrity: sha512-cvzx+vtY/I2hVBZHCLrpoh+sA0hfuzHwDc+BAFPimYLjJkpHnghQM+z8W/KyLGkygJh3BtI3xXXq+dKjnSWEmA==}
     engines: {node: '>=v18'}
@@ -1057,6 +1067,21 @@ packages:
     resolution: {integrity: sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@gitmoji/commit-types@1.1.5:
+    resolution: {integrity: sha512-8D3FZMRY+gtYpTcHG1SOGmm9CFqxNh6rI9xDoCydxHxnWgqInbdF3nk9gibW5gXA58Hf2cVcJaLEcGOKLRAtmw==}
+    dev: true
+
+  /@gitmoji/gitmoji-regex@1.0.0:
+    resolution: {integrity: sha512-+BFXxcWCxn0UIYuG1v5n9SfaCCS8tw95j1x3QsTJRdGGiihRyVLTHiu1wrHlzH3z4nYXKjCKiZFTdWwMjRI+gQ==}
+    dependencies:
+      emoji-regex: 10.3.0
+      gitmojis: 3.14.0
+
+  /@gitmoji/parser-opts@1.4.0:
+    resolution: {integrity: sha512-zzmx/vtpdB/ijjUm7u9OzHNCXWKpSbzVEgVzOzhilMgoTBlUDyInZFUtiCTV+Wf4oCP9nxGa/kQGQFfN+XLH1g==}
+    dependencies:
+      '@gitmoji/gitmoji-regex': 1.0.0
 
   /@humanwhocodes/config-array@0.11.13:
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -2111,6 +2136,7 @@ packages:
 
   /array-ify@1.0.0:
     resolution: {integrity: sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng==}
+    dev: true
 
   /array-union@2.1.0:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
@@ -2479,6 +2505,23 @@ packages:
       - typescript
     dev: true
 
+  /commitlint-config-gitmoji@2.3.1:
+    resolution: {integrity: sha512-T15ssbsyNc6szHlnGWo0/xvIA1mObqM70E9TwKNVTpksxhm+OdFht8hvDdKJAVi4nlZX5tcfTeILOi7SHBGH3w==}
+    dependencies:
+      '@commitlint/types': 17.8.1
+      '@gitmoji/commit-types': 1.1.5
+      '@gitmoji/parser-opts': 1.4.0
+      commitlint-plugin-gitmoji: 2.2.6
+    dev: true
+
+  /commitlint-plugin-gitmoji@2.2.6:
+    resolution: {integrity: sha512-oKHPHeNXby0Ix0ZbHVSK5ZyPx1V4fyBjLOy93cYwXhOEPXe36nkDc/HDPFfQpzx1vz39277TaP9LScbqTbscfQ==}
+    dependencies:
+      '@commitlint/types': 17.8.1
+      '@gitmoji/gitmoji-regex': 1.0.0
+      gitmojis: 3.14.0
+    dev: true
+
   /commitlint@18.4.3(typescript@5.3.3):
     resolution: {integrity: sha512-xNAq3MpW4xZ3VyFH+WU0ykU8LmYcCT+0K4e1IOG5346XSGCb1xJyhFu0JFpq4LfJ7E0/bVxzPY98IsjUH2SQbQ==}
     engines: {node: '>=v18'}
@@ -2495,6 +2538,7 @@ packages:
     dependencies:
       array-ify: 1.0.0
       dot-prop: 5.3.0
+    dev: true
 
   /computeds@0.0.1:
     resolution: {integrity: sha512-7CEBgcMjVmitjYo5q8JTJVra6X5mQ20uTThdK+0kR7UEaDrAWEQcRiBtWJzga4eRpP6afNwwLsX2SET2JhVB1Q==}
@@ -2521,6 +2565,7 @@ packages:
     engines: {node: '>=16'}
     dependencies:
       compare-func: 2.0.0
+    dev: true
 
   /conventional-commit-types@3.0.0:
     resolution: {integrity: sha512-SmmCYnOniSsAa9GqWOeLqc179lfr5TRu5b4QFDkbsrJ5TZjPJx85wtOr3zn+1dbeNiXDKGPbZ72IKbPhLXh/Lg==}
@@ -2773,6 +2818,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-obj: 2.0.0
+    dev: true
 
   /duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
@@ -2787,7 +2833,6 @@ packages:
 
   /emoji-regex@10.3.0:
     resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
-    dev: true
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -3799,6 +3844,9 @@ packages:
       through2: 4.0.2
     dev: true
 
+  /gitmojis@3.14.0:
+    resolution: {integrity: sha512-wPdXxKWfp2dJE6/ch8TDJjYdXvr+4uV67AEcbImj5QC4DmP6Byje1goJL8WgMPFnLY63eadK6oxtnSjdRFzS6g==}
+
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -4181,6 +4229,7 @@ packages:
   /is-obj@2.0.0:
     resolution: {integrity: sha512-drqDG3cbczxxEJRoOXcOjtdp1J/lyp1mNn0xaznRs8+muBhgQcrnbspox5X5fOw0HnMnbfDzvnEMEtqDEJEo8w==}
     engines: {node: '>=8'}
+    dev: true
 
   /is-path-inside@3.0.3:
     resolution: {integrity: sha512-Fd4gABb+ycGAmKou8eMftCupSir5lRxqf4aD/vd0cD2qc4HL07OjCeuHMr8Ro4CoMaeCKDB0/ECBOVWjTwUvPQ==}
