@@ -10,10 +10,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "husky install",
+    "commit": "git-cz",
     "lint-staged": "lint-staged",
-    "commitlint": "commitlint --edit",
-    "commitizen": "commitizen init cz-conventional-changelog --pnpm --save-dev --save-exact --force",
-    "commit": "git-cz"
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@vueuse/core": "^10.7.1",
@@ -32,6 +31,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.1",
     "@commitlint/config-conventional": "^18.4.3",
+    "@commitlint/config-git-commit-plugin": "workspace:*",
     "@commitlint/cz-commitlint": "^18.4.3",
     "@types/eslint__eslintrc": "^2.1.1",
     "@types/lodash": "^4.14.202",

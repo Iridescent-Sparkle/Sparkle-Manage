@@ -1,0 +1,17 @@
+{
+  "name": "@commitlint/config-git-commit-plugin",
+  "type": "commonjs",
+  "version": "0.0.1",
+  "description": "commitlint config for git-commit-plugin's default template",
+  "author": "iridescent",
+  "license": "ISC",
+  "keywords": [
+    "commitlint",
+    "git-commit-plugin",
+    "config"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^7.0.2"
+  }
+}
