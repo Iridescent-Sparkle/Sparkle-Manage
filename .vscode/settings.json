@@ -48,5 +48,6 @@
     "jsonc",
     "yaml",
     "toml"
-  ]
+  ],
+  "typescript.preferences.autoImportFileExcludePatterns": ["vue-router"]
 }
