@@ -20,13 +20,13 @@ RUN pnpm run build
 # deploy-stage
 FROM nginx:stable-alpine as deploy
 
-COPY --from=build /app/dist /usr/share/nginx/html/sparkle-manage
+COPY --from=build /app/dist /usr/share/nginx/html
 
-COPY nginx.conf  /etc/nginx/conf.d/sparkle-manage.conf 
+COPY nginx.conf  /etc/nginx/conf.d/default.conf 
 
-EXPOSE 8080
+EXPOSE 80
 
-ENTRYPOINT ["sh", "-c","mkdir -p /opt/docker/nginx && nginx -g 'daemon off;'"]
+ENTRYPOINT ["sh", "-c","nginx -g 'daemon off;'"]
 
 
 
