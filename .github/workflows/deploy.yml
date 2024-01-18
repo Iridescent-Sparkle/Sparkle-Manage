@@ -28,4 +28,4 @@ jobs:
           port: 22
           script: |
             cd /opt/docker/config
-            ./update.sh
+            ./update-sparkle-manage.sh
