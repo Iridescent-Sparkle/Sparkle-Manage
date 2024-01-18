@@ -12,13 +12,15 @@ COPY package.json .
 RUN npm config set registry https://registry.npmmirror.com
 
 # 执行npm install 下载依赖
-RUN npm install
+RUN npm install -g pnpm
+
+RUN pnpm install
 
 # 复制当前的开发工作区的其他源代码文件到容器/app目录下
 COPY . .
 
 # 执行npm打包构建脚本
-RUN npm run build
+RUN pnpm run build
 
 # deploy-stage
 FROM nginx:stable-alpine as deploy
