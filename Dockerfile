@@ -24,8 +24,7 @@ COPY --from=build /app/dist /usr/share/nginx/html/sparkle-manage
 
 COPY nginx.conf  /etc/nginx/conf.d/sparkle-manage.conf 
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8080
 
 ENTRYPOINT ["sh", "-c","mkdir -p /opt/docker/nginx && nginx -g 'daemon off;'"]
 
