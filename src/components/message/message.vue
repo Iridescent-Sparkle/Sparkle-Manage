@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <VSnackbar />
+  <div />
 </template>

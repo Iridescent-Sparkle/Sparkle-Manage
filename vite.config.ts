@@ -7,6 +7,7 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 import Layouts from 'vite-plugin-vue-layouts'
+import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
   resolve: {
@@ -42,12 +43,13 @@ export default defineConfig({
       exclude: [],
       importMode: 'async',
     }),
-    // Vuetify({
-    //   autoImport: true,
-    // }),
+    UnoCSS(),
     Layouts({
       layoutsDirs: 'src/layouts',
       defaultLayout: 'default',
     }),
+    // Vuetify({
+    //   autoImport: true,
+    // }),
   ],
 })

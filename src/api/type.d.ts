@@ -1,20 +1,17 @@
 import type { Request } from '.'
 
+interface GlobalVariable {
+  post: Request['post']
+  delete: Request['delete']
+  put: Request['put']
+  get: Request['get']
+}
+
 declare global {
   interface Window {
-    $: {
-      post: Request['post']
-      delete: Request['delete']
-      put: Request['put']
-      get: Request['get']
-    }
+    $: GlobalVariable
   }
-  const $: {
-    post: Request['post']
-    delete: Request['delete']
-    put: Request['put']
-    get: Request['get']
-  }
+  const $: GlobalVariable
 }
 
 export interface CustomConfig {

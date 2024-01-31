@@ -7,6 +7,7 @@ export default antfu(
   {
     vue: true,
     typescript: true,
+    unocss: true,
     formatters: {
       css: true,
       html: true,

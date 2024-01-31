@@ -13,6 +13,7 @@
     "vitejs",
     "Vitesse",
     "vitest",
+    "vnode",
     "vueuse"
   ],
   "editor.codeActionsOnSave": {
@@ -52,5 +53,10 @@
     "yaml",
     "toml"
   ],
-  "typescript.preferences.autoImportFileExcludePatterns": ["vue-router"]
+  "typescript.preferences.autoImportFileExcludePatterns": ["vue-router"],
+  "editor.quickSuggestions": {
+    "strings": "on",
+    "comments": "on",
+    "other": "on"
+  }
 }
