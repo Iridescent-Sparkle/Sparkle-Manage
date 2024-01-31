@@ -1,21 +1,9 @@
 {
-  "cSpell.words": [
-    "antfu",
-    "demi",
-    "gitmoji",
-    "iconify",
-    "intlify",
-    "pinia",
-    "pnpm",
-    "unocss",
-    "unplugin",
-    "Vite",
-    "vitejs",
-    "Vitesse",
-    "vitest",
-    "vnode",
-    "vueuse"
-  ],
+  "editor.quickSuggestions": {
+    "strings": "on",
+    "comments": "on",
+    "other": "on"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.fixAll.eslint": "explicit",
@@ -23,19 +11,48 @@
     "source.fixAll.stylelint": "explicit",
     "source.organizeImports": "never"
   },
-  "prettier.enable": false,
   "eslint.experimental.useFlatConfig": true,
   "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off" },
-    { "rule": "format/*", "severity": "off" },
-    { "rule": "*-indent", "severity": "off" },
-    { "rule": "*-spacing", "severity": "off" },
-    { "rule": "*-spaces", "severity": "off" },
-    { "rule": "*-order", "severity": "off" },
-    { "rule": "*-dangle", "severity": "off" },
-    { "rule": "*-newline", "severity": "off" },
-    { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
+    {
+      "rule": "style/*",
+      "severity": "off"
+    },
+    {
+      "rule": "format/*",
+      "severity": "off"
+    },
+    {
+      "rule": "*-indent",
+      "severity": "off"
+    },
+    {
+      "rule": "*-spacing",
+      "severity": "off"
+    },
+    {
+      "rule": "*-spaces",
+      "severity": "off"
+    },
+    {
+      "rule": "*-order",
+      "severity": "off"
+    },
+    {
+      "rule": "*-dangle",
+      "severity": "off"
+    },
+    {
+      "rule": "*-newline",
+      "severity": "off"
+    },
+    {
+      "rule": "*quotes",
+      "severity": "off"
+    },
+    {
+      "rule": "*semi",
+      "severity": "off"
+    }
   ],
   "eslint.validate": [
     "javascript",
@@ -53,10 +70,33 @@
     "yaml",
     "toml"
   ],
-  "typescript.preferences.autoImportFileExcludePatterns": ["vue-router"],
-  "editor.quickSuggestions": {
-    "strings": "on",
-    "comments": "on",
-    "other": "on"
-  }
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "vue",
+    "sass"
+  ],
+  "prettier.enable": false,
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "vue-router"
+  ],
+  "cSpell.words": [
+    "antfu",
+    "demi",
+    "gitmoji",
+    "iconify",
+    "intlify",
+    "pinia",
+    "pnpm",
+    "unocss",
+    "unplugin",
+    "Vite",
+    "vitejs",
+    "Vitesse",
+    "vitest",
+    "vnode",
+    "vueuse"
+  ]
 }
