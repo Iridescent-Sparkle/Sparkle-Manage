@@ -1,11 +1,11 @@
 import path from 'node:path'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vuetify from 'vite-plugin-vuetify'
+import Vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
+import { Vuetify3Resolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import VueRouter from 'unplugin-vue-router/vite'
+import { defineConfig } from 'vite'
 import Layouts from 'vite-plugin-vue-layouts'
 
 export default defineConfig({
@@ -15,7 +15,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    vue(),
+    Vue(),
     AutoImport({
       dts: './src/auto-imports.d.ts',
       imports: [
@@ -29,8 +29,10 @@ export default defineConfig({
         enabled: true,
         filepath: './.eslintrc-auto-import.json',
       },
+
     }),
     Components({
+      resolvers: [Vuetify3Resolver()],
       dts: './src/components.d.ts',
     }),
     VueRouter({
@@ -40,9 +42,9 @@ export default defineConfig({
       exclude: [],
       importMode: 'async',
     }),
-    vuetify({
-      autoImport: true,
-    }),
+    // Vuetify({
+    //   autoImport: true,
+    // }),
     Layouts({
       layoutsDirs: 'src/layouts',
       defaultLayout: 'default',
