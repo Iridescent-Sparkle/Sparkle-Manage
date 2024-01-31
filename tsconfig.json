@@ -4,11 +4,16 @@
     "jsx": "preserve",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
+    "baseUrl": ".",
     "module": "ESNext",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "resolveJsonModule": true,
+    "types": ["vite-plugin-vue-layouts/client"],
     "allowImportingTsExtensions": true,
 
     /* Linting */
@@ -19,7 +24,9 @@
     "noEmit": true,
     "isolatedModules": true,
     "skipLibCheck": true
+
   },
   "references": [{ "path": "./tsconfig.node.json" }],
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+
 }
