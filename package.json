@@ -39,6 +39,7 @@
     "commitizen": "^4.3.0",
     "commitlint": "^18.4.3",
     "eslint": "npm:eslint-ts-patch@8.56.0-0",
+    "eslint-plugin-format": "^0.1.0",
     "eslint-ts-patch": "8.56.0-0",
     "husky": "^8.0.3",
     "inquirer": "^8.2.5",
