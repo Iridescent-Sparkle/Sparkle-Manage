@@ -3,6 +3,7 @@ import axios from 'axios'
 import nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
 import type { CustomConfig } from './type'
+import { message } from '@/components/message'
 
 export class Request {
   private readonly axios: AxiosInstance
@@ -27,13 +28,12 @@ export class Request {
     })
   }
 
-  // eslint-disable-next-line unused-imports/no-unused-vars
   private request<T extends Record<string, any>>(requestConfig: AxiosRequestConfig, customConfig: CustomConfig = { showMsg: false }) {
     return new Promise<T>((resolve, reject) => {
       this.axios<T>(requestConfig).then((res) => {
         resolve(res.data)
       }).catch((error) => {
-        // customConfig.showMsg && message.error(error.message)
+        customConfig.showMsg && message.error(error.message)
         reject(error)
       })
     })

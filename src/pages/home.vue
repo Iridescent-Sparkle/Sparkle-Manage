@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { message } from '@/components/message'
+
+onMounted(() => {
+  message.success('Hello World')
+})
+</script>
 
 <template>
   <div>

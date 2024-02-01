@@ -16,6 +16,8 @@
     "commitlint": "commitlint --edit"
   },
   "dependencies": {
+    "@iconify-json/mdi": "^1.1.64",
+    "@unocss/reset": "^0.58.4",
     "@vueuse/core": "^10.7.2",
     "axios": "^1.6.7",
     "chart.js": "^4.4.1",
