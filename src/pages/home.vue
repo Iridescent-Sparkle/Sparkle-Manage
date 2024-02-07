@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { message } from '@/components/message'
+import { message } from '@/components/message/index'
 
 onMounted(() => {
   message.success('Hello World')
@@ -8,7 +8,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <h2>example</h2>
+    <VCard>1212</VCard>
   </div>
 </template>
 
