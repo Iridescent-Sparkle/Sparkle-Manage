@@ -1,12 +1,11 @@
-<script setup lang="ts"></script>
+<script setup>
+import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVerticalNav.vue'
+</script>
 
 <template>
-  <div>
-    <h2>default layouts</h2>
-    <RouterView />
-  </div>
+  <DefaultLayoutWithVerticalNav><RouterView /></DefaultLayoutWithVerticalNav>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="sass">
 
 </style>
