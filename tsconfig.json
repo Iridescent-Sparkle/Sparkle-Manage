@@ -45,7 +45,7 @@
     ],
     "strict": true,
     "sourceMap": true,
-    // "esModuleInterop": true,
+    "esModuleInterop": true,
     "isolatedModules": true,
     "skipLibCheck": true
   },

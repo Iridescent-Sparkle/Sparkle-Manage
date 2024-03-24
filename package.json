@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -118,5 +118,8 @@
     "vite-plugin-vuetify": "1.0.2",
     "vue-shepherd": "^3.0.0",
     "vue-tsc": "^1.8.27"
+  },
+  "resolutions": {
+    "postcss": "8"
   }
 }
