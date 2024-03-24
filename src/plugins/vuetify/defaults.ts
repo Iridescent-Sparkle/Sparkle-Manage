@@ -1,6 +1,4 @@
-import type { VuetifyOptions } from 'vuetify'
-
-const defaults: VuetifyOptions['defaults'] = {
+export default {
   IconBtn: {
     icon: true,
     size: 'small',
@@ -132,5 +130,3 @@ const defaults: VuetifyOptions['defaults'] = {
     hideDetails: 'auto',
   },
 }
-
-export default defaults

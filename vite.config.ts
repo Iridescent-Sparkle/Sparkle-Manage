@@ -1,55 +1,54 @@
-import path from 'node:path'
-import Vue from '@vitejs/plugin-vue'
+import { fileURLToPath } from 'node:url'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
-import { Vuetify3Resolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
-import Layouts from 'vite-plugin-vue-layouts'
-import UnoCSS from 'unocss/vite'
+import vuetify from 'vite-plugin-vuetify'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@/': `${path.resolve(__dirname, 'src')}/`,
-    },
-  },
   plugins: [
-    Vue(),
-    AutoImport({
-      dts: './src/auto-imports.d.ts',
-      imports: [
-        'vue',
-        'vue-i18n',
-        '@vueuse/core',
-        VueRouterAutoImports,
-      ],
-      vueTemplate: true,
-      eslintrc: {
-        enabled: true,
-        filepath: './.eslintrc-auto-import.json',
-      },
+    vue(),
+    vueJsx(),
 
+    // Docs: https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin
+    vuetify({
+      styles: {
+        configFile: 'src/styles/variables/_vuetify.scss',
+      },
     }),
     Components({
-      resolvers: [Vuetify3Resolver()],
-      dts: './src/components.d.ts',
+      dirs: ['src/@core/components'],
+      dts: true,
     }),
-    VueRouter({
-      dts: './src/typed-router.d.ts',
-      routesFolder: 'src/pages',
-      extensions: ['.vue'],
-      exclude: [],
-      importMode: 'async',
+
+    // Docs: https://github.com/antfu/unplugin-auto-import#unplugin-auto-import
+    AutoImport({
+      imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/math', 'pinia'],
+      vueTemplate: true,
     }),
-    UnoCSS(),
-    Layouts({
-      layoutsDirs: 'src/layouts',
-      defaultLayout: 'default',
-    }),
-    // Vuetify({
-    //   autoImport: true,
-    // }),
   ],
+  define: { 'process.env': {} },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@core': fileURLToPath(new URL('./src/@core', import.meta.url)),
+      '@layouts': fileURLToPath(new URL('./src/@layouts', import.meta.url)),
+      '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),
+      '@styles': fileURLToPath(new URL('./src/styles/', import.meta.url)),
+      '@configured-variables': fileURLToPath(new URL('./src/styles/variables/_template.scss', import.meta.url)),
+      '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
+      'apexcharts': fileURLToPath(new URL('node_modules/apexcharts-clevision', import.meta.url)),
+    },
+  },
+  build: {
+    chunkSizeWarningLimit: 5000,
+  },
+  optimizeDeps: {
+    exclude: ['vuetify'],
+    entries: [
+      './src/**/*.vue',
+    ],
+  },
 })

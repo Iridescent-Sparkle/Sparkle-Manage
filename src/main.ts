@@ -1,16 +1,24 @@
-import '@unocss/reset/normalize.css'
+/* eslint-disable import/order */
+import '@/@iconify/icons-bundle'
+import App from '@/App.vue'
+import vuetify from '@/plugins/vuetify'
+import { loadFonts } from '@/plugins/webfontloader'
+import router from '@/router'
+import '@core/scss/template/index.scss'
+import '@layouts/styles/index.scss'
+import '@styles/styles.scss'
 import { createPinia } from 'pinia'
-import 'virtual:uno.css'
 import { createApp } from 'vue'
-import App from './App.vue'
-import vuetify from './plugins/vuetify'
-import router from './router'
 
-const pinia = createPinia()
+loadFonts()
+
+// Create vue app
 const app = createApp(App)
 
-app.use(router)
-app.use(pinia)
+// Use plugins
 app.use(vuetify)
+app.use(createPinia())
+app.use(router)
 
+// Mount vue app
 app.mount('#app')
